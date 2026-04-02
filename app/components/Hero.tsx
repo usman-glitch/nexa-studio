@@ -85,19 +85,19 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <div className="relative z-10 w-full max-w-[1500px] mx-auto text-center mb-12">
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto text-center mb-8 md:mb-12">
         <motion.h1 
           custom={1}
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter"
+          className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-gray-900 leading-[0.9] tracking-tighter"
         >
           Crafting Visuals That Make <br />
           Brands <span className="text-gray-300 italic font-serif font-light">Unforgettable</span>
           
           <motion.span 
-            className="inline-block align-middle ml-6 relative group/stone"
+            className="inline-block align-middle ml-4 md:ml-6 relative group/stone"
             animate={{ 
               y: [0, -20, 0],
               rotateZ: [0, 8, -8, 0],
@@ -113,10 +113,10 @@ export default function Hero() {
             
             <Image 
               src="/kryptonite.png" 
-              alt="Nexas Studio creative kryptonite crystal representing high-end branding power" 
-              width={65} 
-              height={65} 
-              className="relative z-10 drop-shadow-[0_10px_30px_rgba(34,197,94,0.4)] lg:w-[80px] lg:h-[80px] object-contain cursor-default"
+              alt="Nexas Studio creative kryptonite crystal" 
+              width={50} 
+              height={50} 
+              className="relative z-10 drop-shadow-[0_10px_30px_rgba(34,197,94,0.4)] md:w-[65px] md:h-[65px] lg:w-[80px] lg:h-[80px] object-contain cursor-default"
             />
           </motion.span>
         </motion.h1>
@@ -126,41 +126,41 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.9, y: 40 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-        className="relative w-full max-w-[1400px] aspect-[16/10] md:aspect-[21/9] rounded-[40px] overflow-hidden shadow-[0_40px_100px_-15px_rgba(0,0,0,0.1)] group"
+        className="relative w-full max-w-[1100px] aspect-[4/3] md:aspect-[16/10] lg:aspect-[21/9] rounded-[30px] md:rounded-[40px] overflow-hidden shadow-[0_40px_100px_-15px_rgba(0,0,0,0.1)] group"
       >
         <Image
           src="/hero.jpg"
-          alt="Nexa Studio's premium portfolio showcase representing digital excellence"
+          alt="Nexa Studio's premium portfolio showcase"
           fill
           className="object-cover scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out brightness-[0.85] group-hover:brightness-100"
           priority
-          sizes="(max-width: 1400px) 100vw, 1400px"
+          sizes="(max-width: 1100px) 100vw, 1100px"
         />
         
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700" />
 
         <motion.div 
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-10 right-10 hidden lg:flex w-24 h-24 items-center justify-center rounded-full border border-white/20 backdrop-blur-md"
+          className="absolute top-6 right-6 md:top-10 md:right-10 hidden sm:flex w-16 h-16 md:w-24 md:h-24 items-center justify-center rounded-full border border-white/20 backdrop-blur-md"
           aria-hidden="true"
         >
-          <p className="text-[8px] font-bold text-white text-center uppercase tracking-widest leading-tight">
+          <p className="text-[6px] md:text-[8px] font-bold text-white text-center uppercase tracking-widest leading-tight">
             Design • Build • Scale •
           </p>
         </motion.div>
 
-        <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16 lg:p-20">
-          <div className="grid lg:grid-cols-2 gap-8 items-end">
-            <div className="space-y-4">
+        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 lg:p-16">
+          <div className="grid lg:grid-cols-2 gap-6 items-end">
+            <div className="space-y-3">
               <div style={{ perspective: "1200px" }}>
                 <motion.div 
                   custom={2}
                   initial="hidden"
                   whileInView="visible"
                   variants={fadeInUp}
-                  className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tighter"
+                  className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-[0.95] tracking-tighter"
                   style={{ transformStyle: "preserve-3d" }}
                   animate={{ 
                     rotateY: [-4, 4, -4],
@@ -171,17 +171,17 @@ export default function Hero() {
                     rotateX: { duration: 8, repeat: Infinity, ease: "easeInOut" },
                   }}
                 >
-                  <span className="block drop-shadow-[0_15px_15px_rgba(0,0,0,0.4)]">DIGITAL</span>
-                  <span className="block drop-shadow-[0_15px_15px_rgba(0,0,0,0.4)]">EXCELLENCE</span>
+                  <span className="block drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)]">DIGITAL</span>
+                  <span className="block drop-shadow-[0_10px_10px_rgba(0,0,0,0.4)]">EXCELLENCE</span>
                 </motion.div>
               </div>
 
               <motion.p 
                 custom={3}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible"
                 variants={fadeInUp}
-                className="text-gray-300 max-w-sm text-sm md:text-lg font-medium leading-relaxed"
+                className="text-gray-300 max-w-[280px] md:max-w-sm text-xs md:text-base lg:text-lg font-medium leading-relaxed"
               >
                 We translate complex visions into seamless digital experiences that dominate the market.
               </motion.p>
@@ -189,21 +189,20 @@ export default function Hero() {
 
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="lg:flex lg:justify-end"
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="flex lg:justify-end"
             >
               <a
                 href="https://wa.me/923434378026"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Contact Nexa Studio on WhatsApp to start a new project"
-                className="group relative inline-flex items-center justify-center bg-white text-black px-10 py-5 rounded-full overflow-hidden transition-all duration-500 hover:pr-14"
+                className="group relative inline-flex items-center justify-center bg-white text-black px-6 py-4 md:px-10 md:py-5 rounded-full overflow-hidden transition-all duration-500 hover:pr-14"
               >
-                <span className="relative z-10 text-xs font-black uppercase tracking-[0.2em]">
+                <span className="relative z-10 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
                   Start a Project
                 </span>
-                <ArrowUpRight className="absolute right-6 w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0" aria-hidden="true" />
+                <ArrowUpRight className="absolute right-4 md:right-6 w-4 h-4 md:w-5 md:h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0" aria-hidden="true" />
                 <div className="absolute inset-0 bg-gray-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </a>
             </motion.div>
@@ -214,10 +213,10 @@ export default function Hero() {
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="mt-12 flex flex-col items-center gap-2"
+        className="mt-8 md:mt-12 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gray-300 to-transparent" />
+        <div className="w-[1px] h-8 md:h-12 bg-gradient-to-b from-gray-300 to-transparent" />
         <span className="text-[8px] font-black uppercase tracking-[0.4em] text-gray-400">Scroll</span>
       </motion.div>
 
