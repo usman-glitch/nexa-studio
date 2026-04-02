@@ -32,7 +32,7 @@ export default function About() {
           {/* UPDATED HEADING STYLE: Poppins Bold */}
           <h2 className="font-poppins font-bold text-5xl md:text-7xl xl:text-8xl text-gray-900 leading-[0.95] tracking-tighter">
             Building <br />
-            Digital <span className="text-gray-300">Excellence</span>
+            Digital <span className="text-gray-400">Excellence</span>
           </h2>
 
           <p className="text-gray-500 mt-10 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-[650px]">

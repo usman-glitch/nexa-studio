@@ -43,7 +43,7 @@ export default function Testimonials() {
             >
               <div className="w-10 h-[1px] bg-black" aria-hidden="true" />
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black">
-                Kind Words
+          Kind Words
               </span>
             </motion.div>
 

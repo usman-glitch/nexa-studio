@@ -71,7 +71,7 @@ export default function Services() {
             {/* UPDATED HEADING STYLE: Poppins Bold */}
             <h2 className="font-poppins font-bold text-5xl md:text-7xl text-gray-900 leading-[0.95] tracking-tighter">
               What We Can Do <br />
-              <span className="text-gray-300">For Your Business</span>
+              <span className="text-gray-400">For Your Business</span>
             </h2>
           </motion.div>
 

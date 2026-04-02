@@ -40,9 +40,9 @@ export default function AboutPage() {
             opacity: [0.1, 0.2, 0.1] 
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute top-0 -right-20 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-green-500/10 blur-[100px] md:blur-[150px] rounded-full"
+          className="absolute top-0 -right-20 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#00887a]/10 blur-[100px] md:blur-[150px] rounded-full"
         />
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-green-500/5 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#00887a]/5 to-transparent" />
       </div>
 
       <div className="relative z-10 py-24 md:py-32 lg:py-48 px-4 sm:px-6 md:px-10">
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 variants={fadeInUp}
               >
                 <div className="flex items-center gap-3 mb-4 md:mb-6">
-                  <Navigation className="w-3 h-3 md:w-4 md:h-4 text-green-500 fill-green-500 rotate-[15deg]" aria-hidden="true" />
+                  <Navigation className="w-3 h-3 md:w-4 md:h-4 text-[#00887a] fill-[#00887a] rotate-[15deg]" aria-hidden="true" />
                   <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-gray-500">
                     Creative by Nature. Technical by Design.
                   </span>
@@ -129,7 +129,7 @@ export default function AboutPage() {
                     opacity: [0.3, 0.5, 0.3] 
                   }}
                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute -top-1/2 -left-1/2 w-full h-full bg-green-500/20 blur-[80px] md:blur-[120px] rounded-full"
+                  className="absolute -top-1/2 -left-1/2 w-full h-full bg-[#00887a]/20 blur-[80px] md:blur-[120px] rounded-full"
                   aria-hidden="true"
                 />
                 
@@ -141,18 +141,18 @@ export default function AboutPage() {
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     className="mb-6 md:mb-8 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md"
                   >
-                    <Zap className="w-4 h-4 md:w-5 md:h-5 text-green-500 fill-green-500/20" aria-hidden="true" />
+                    <Zap className="w-4 h-4 md:w-5 md:h-5 text-[#00887a] fill-[#00887a]/20" aria-hidden="true" />
                   </motion.div>
 
                   <blockquote className="text-xl md:text-2xl lg:text-3xl font-serif italic text-white leading-tight tracking-tight">
-                    "Great design goes beyond <span className="text-green-500">aesthetics</span> — it’s about creating meaningful brand connections."
+                    "Great design goes beyond <span className="bg-[#00887a]">aesthetics</span> — it’s about creating meaningful brand connections."
                   </blockquote>
                   
-                  <div className="mt-6 md:mt-8 w-12 h-[1px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent" aria-hidden="true" />
+                  <div className="mt-6 md:mt-8 w-12 h-[1px] bg-gradient-to-r from-transparent via-[#00887a]/50 to-transparent" aria-hidden="true" />
                 </div>
               </div>
               
-              <section className="p-6 md:p-8 rounded-[32px] md:rounded-[40px] bg-[#00887a] text-black shadow-[0_20px_50px_rgba(34,197,94,0.2)]">
+              <section className="p-6 md:p-8 rounded-[32px] md:rounded-[40px] bg-[#00887a] text-black shadow-[0_20px_50px_rgba(0,136,122,0.2)]">
                 <h3 className="font-black uppercase tracking-widest text-[8px] md:text-[10px] mb-2 opacity-70">The Goal</h3>
                 <p className="font-bold text-lg md:text-xl leading-tight tracking-tight">Visually compelling, strategically effective, and aligned with long-term goals.</p>
               </section>
