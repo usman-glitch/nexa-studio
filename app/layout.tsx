@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nexastudioofficial.com"),
-  title: "NEXA Studio | Creative by Nature. Technical by Design.",
+  title: "NEXA Studio | Digital Design Agency",
   description: "High-end digital branding and web development solutions for the modern era.",
   openGraph: {
     images: ['/opengraph-image.png'], 
