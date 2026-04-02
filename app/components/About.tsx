@@ -29,7 +29,8 @@ export default function About() {
             EST. 2026
           </p>
 
-          <h2 className="text-5xl md:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tighter">
+          {/* UPDATED HEADING STYLE: Poppins Bold */}
+          <h2 className="font-poppins font-bold text-5xl md:text-7xl xl:text-8xl text-gray-900 leading-[0.95] tracking-tighter">
             Building <br />
             Digital <span className="text-gray-300">Excellence</span>
           </h2>

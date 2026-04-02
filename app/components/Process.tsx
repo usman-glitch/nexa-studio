@@ -59,7 +59,8 @@ export default function Process() {
             <p className="text-[10px] font-black tracking-[0.4em] text-gray-500 mb-4 uppercase">
               Our Methodology
             </p>
-            <h2 className="text-5xl md:text-7xl font-black text-white leading-[0.95] tracking-tighter">
+            {/* UPDATED HEADING STYLE: Poppins Bold */}
+            <h2 className="font-poppins font-bold text-5xl md:text-7xl text-white leading-[0.95] tracking-tighter">
               The Path To <br />
               <span className="text-gray-600">Digital Impact</span>
             </h2>
@@ -94,8 +95,9 @@ export default function Process() {
                   <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white/5 group-hover:bg-white transition-all duration-500 group-hover:rotate-[10deg]">
                     <Icon className="w-7 h-7 text-white group-hover:text-black transition-colors" aria-hidden="true" />
                   </div>
+                  {/* UPDATED OPACITY: Changed from white/5 to white/20 */}
                   <span 
-                    className="text-4xl font-black text-white/5 group-hover:text-white/10 transition-colors uppercase"
+                    className="text-4xl font-black text-white/20 group-hover:text-white/30 transition-colors uppercase"
                     aria-label={`Step ${step.number}`}
                   >
                     {step.number}

@@ -68,7 +68,8 @@ export default function Services() {
             <p className="text-[10px] font-black tracking-[0.4em] text-gray-400 mb-4 uppercase">
               Our Expertise
             </p>
-            <h2 className="text-5xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter">
+            {/* UPDATED HEADING STYLE: Poppins Bold */}
+            <h2 className="font-poppins font-bold text-5xl md:text-7xl text-gray-900 leading-[0.95] tracking-tighter">
               What We Can Do <br />
               <span className="text-gray-300">For Your Business</span>
             </h2>

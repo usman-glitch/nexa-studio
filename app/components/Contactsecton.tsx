@@ -123,9 +123,9 @@ export default function ContactSection() {
       <div className="relative z-10 max-w-[1500px] mx-auto">
         <header className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <p className="text-[10px] font-black tracking-[0.4em] text-gray-400 mb-4 uppercase">Get In Touch</p>
-            <h2 className="text-5xl md:text-7xl font-black text-gray-900 leading-[0.95] tracking-tighter">
-              Let's Build <br /> <span className="text-gray-300">Extraordinary</span>
+            <p className="font-poppins font-bold text-[10px] tracking-[0.4em] text-gray-400 mb-4 uppercase">Get In Touch</p>
+            <h2 className="font-poppins font-bold text-5xl md:text-7xl lg:text-8xl text-gray-900 leading-[0.95] tracking-tighter">
+              Let's Build <br /> <span className="text-gray-400">Extraordinary</span>
             </h2>
           </motion.div>
           <motion.p initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-gray-500 text-lg md:text-xl max-w-md lg:text-right font-medium leading-relaxed">

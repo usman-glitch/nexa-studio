@@ -47,9 +47,9 @@ export default function Testimonials() {
               </span>
             </motion.div>
 
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 tracking-tighter leading-[0.85]">
+            <h2 className="font-poppins font-bold text-5xl md:text-7xl lg:text-8xl text-gray-900 tracking-tighter leading-[0.85]">
               Real Impact. <br />
-              <span className="text-gray-300">Honest Feedback.</span>
+              <span className="text-gray-400">Honest Feedback.</span>
             </h2>
           </div>
           
@@ -98,103 +98,67 @@ export default function Testimonials() {
             </motion.figure>
           ))}
         </div>
+      </div>
 
-        {/* LOGO CLOUD SECTION */}
-        <div className="mt-32 pt-12 border-t border-gray-100 overflow-hidden relative min-h-[14rem] flex flex-col justify-center gap-12">
-          <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white to-transparent z-10" />
-
-          {/* ROW 1 */}
-          <div className="flex">
-            <motion.div 
-              className="flex whitespace-nowrap gap-16 items-center flex-shrink-0"
-              animate={{ 
-                x: ["0%", "-50%"],
-                scale: [1, 1.03, 1],
-                rotate: [-0.8, 0.8, -0.8],
-                opacity: [0.7, 0.9, 0.7]
-              }}
-              transition={{ 
-                x: { ease: "linear", duration: 32, repeat: Infinity },
-                scale: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
-                rotate: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
-                opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
-            >
-              {Array.from({ length: 38 }, (_, i) => {
-                const logoNum = ((i % 19) + 1);
-                return (
-                  <motion.div 
-                    key={`r1-${i}`} 
-                    className="w-48 h-24 relative flex-shrink-0 shadow-2xl hover:shadow-3xl hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-all duration-400 cursor-pointer border border-gray-100/50 hover:border-gray-200/70 rounded-2xl hover:bg-white/30 backdrop-blur-sm"
-                    whileHover={{ 
-                      y: -12, 
-                      scale: 1.2,
-                      rotate: [0, 5, -5, 0],
-                      transition: { duration: 0.6 }
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Image
-                      src={`/logo${logoNum}.png`}
-                      alt={`Partner logo ${logoNum}`}
-                      fill
-                      sizes="192px"
-                      className="object-contain brightness-130 saturate-175 hover:brightness-160 hover:saturate-200 hover:drop-shadow-lg"
-                      priority={logoNum <= 5}
-                    />
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-
-          {/* ROW 2 */}
-          <div className="flex">
-            <motion.div 
-              className="flex whitespace-nowrap gap-16 items-center flex-shrink-0"
-              animate={{ 
-                x: ["-50%", "0%"],
-                scale: [1, 1.03, 1],
-                rotate: [0.8, -0.8, 0.8],
-                opacity: [0.7, 0.9, 0.7]
-              }}
-              transition={{ 
-                x: { ease: "linear", duration: 38, repeat: Infinity },
-                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-                opacity: { duration: 4.5, repeat: Infinity, ease: "easeInOut" }
-              }}
-            >
-              {Array.from({ length: 38 }, (_, i) => {
-                const logoNum = ((i % 19) + 1);
-                return (
-                  <motion.div 
-                    key={`r2-${i}`} 
-                    className="w-48 h-24 relative flex-shrink-0 shadow-2xl hover:shadow-3xl hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-all duration-400 cursor-pointer border border-gray-100/50 hover:border-gray-200/70 rounded-2xl hover:bg-white/30 backdrop-blur-sm"
-                    whileHover={{ 
-                      y: -12, 
-                      scale: 1.2,
-                      rotate: [0, 5, -5, 0],
-                      transition: { duration: 0.6 }
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Image
-                      src={`/logo${logoNum}.png`}
-                      alt={`Partner logo ${logoNum}`}
-                      fill
-                      sizes="192px"
-                      className="object-contain brightness-130 saturate-175 hover:brightness-160 hover:saturate-200 hover:drop-shadow-lg"
-                      priority={logoNum <= 5}
-                    />
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-
+      {/* LOGO CLOUD SECTION - SMOOTH DECELERATION */}
+      <div className="w-full mt-32 pt-12 overflow-hidden relative min-h-[14rem] flex flex-col justify-center gap-12">
+        
+        {/* ROW 1: Glides and slows down infinitely */}
+        <div className="flex w-full">
+          <motion.div 
+            className="flex whitespace-nowrap gap-16 items-center flex-shrink-0"
+            animate={{ x: ["0%", "-10%", "-20%", "-30%", "-40%", "-50%"] }}
+            transition={{ 
+              duration: 40, // Increased duration for a slower, premium feel
+              repeat: Infinity,
+              ease: [0.45, 0, 0.55, 1], // Custom bezier for smooth glide-to-slow effect
+              repeatType: "loop"
+            }}
+          >
+            {[...Array(20)].map((_, i) => {
+              const logoNum = (i % 9) + 1;
+              return (
+                <div key={`r1-${i}`} className="w-52 h-28 relative flex-shrink-0 transition-transform duration-500 hover:scale-110">
+                  <Image
+                    src={`/logo${logoNum}.png`}
+                    alt="Partner Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              );
+            })}
+          </motion.div>
         </div>
+
+        {/* ROW 2: Glides and slows down infinitely (Synchronized) */}
+        <div className="flex w-full">
+          <motion.div 
+            className="flex whitespace-nowrap gap-16 items-center flex-shrink-0"
+            animate={{ x: ["-50%", "-40%", "-30%", "-20%", "-10%", "0%"] }}
+            transition={{ 
+              duration: 40, 
+              repeat: Infinity,
+              ease: [0.45, 0, 0.55, 1],
+              repeatType: "loop"
+            }}
+          >
+            {[...Array(20)].map((_, i) => {
+              const logoNum = (i % 10) + 10;
+              return (
+                <div key={`r2-${i}`} className="w-52 h-28 relative flex-shrink-0 transition-transform duration-500 hover:scale-110">
+                  <Image
+                    src={`/logo${logoNum}.png`}
+                    alt="Partner Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );
