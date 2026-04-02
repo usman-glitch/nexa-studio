@@ -26,7 +26,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <p className="inline-block px-3 py-1 mb-6 text-[10px] font-black tracking-[0.4em] text-white bg-black rounded-full uppercase">
-            EST. 2023
+            EST. 2026
           </p>
 
           <h2 className="text-5xl md:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tighter">

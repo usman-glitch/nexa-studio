@@ -56,12 +56,19 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       className="fixed top-0 z-[100] w-full px-6 py-4 md:py-6 transition-all duration-500"
     >
-      <div
+      <motion.div
         className={`max-w-[1500px] mx-auto flex items-center justify-between px-6 py-3 transition-all duration-500 rounded-[24px] md:rounded-full ${
           scrolled
-            ? "bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]"
-            : "bg-black border border-white/10"
+            ? "bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/20 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] scale-x-60 origin-center"
+            : "bg-black border border-white/10 scale-x-100"
         }`}
+        animate={{
+          paddingLeft: scrolled ? "0.25rem" : "1.5rem",
+          paddingRight: scrolled ? "0.25rem" : "1.5rem",
+          paddingTop: scrolled ? "0.125rem" : "0.75rem",
+          paddingBottom: scrolled ? "0.125rem" : "0.75rem",
+        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         {/* 1. LOGO SECTION */}
         <Link
@@ -93,11 +100,7 @@ export default function Navbar() {
                 height={40}
                 style={{ width: "130px", height: "auto" }}
                 priority
-                className={`object-contain transition-all duration-500 ${
-                  scrolled
-                    ? "brightness-0 opacity-80 group-hover/logo:brightness-100 group-hover/logo:opacity-100"
-                    : "brightness-100 opacity-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
-                }`}
+                className="object-contain transition-all duration-500 brightness-100 opacity-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover/logo:drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]"
               />
             </motion.div>
 
@@ -124,17 +127,11 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className={`relative text-[10px] font-black uppercase tracking-[0.3em] group transition-colors duration-300 ${
-                  scrolled
-                    ? "text-gray-900 hover:text-white"
-                    : "text-gray-300 hover:text-white"
-                }`}
+                className="relative text-[10px] font-black uppercase tracking-[0.3em] group transition-colors duration-300 text-gray-300 hover:text-white"
               >
                 {link.name}
                 <span
-                  className={`absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full ${
-                    scrolled ? "bg-black" : "bg-white"
-                  }`}
+                  className="absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-300 group-hover:w-full bg-white"
                   aria-hidden="true"
                 />
               </Link>
@@ -171,7 +168,7 @@ export default function Navbar() {
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* 4. FULLSCREEN MOBILE OVERLAY */}
       <AnimatePresence>

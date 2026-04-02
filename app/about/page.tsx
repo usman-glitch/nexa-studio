@@ -152,7 +152,7 @@ export default function AboutPage() {
                 </div>
               </div>
               
-              <section className="p-6 md:p-8 rounded-[32px] md:rounded-[40px] bg-green-500 text-black shadow-[0_20px_50px_rgba(34,197,94,0.2)]">
+              <section className="p-6 md:p-8 rounded-[32px] md:rounded-[40px] bg-[#00887a] text-black shadow-[0_20px_50px_rgba(34,197,94,0.2)]">
                 <h3 className="font-black uppercase tracking-widest text-[8px] md:text-[10px] mb-2 opacity-70">The Goal</h3>
                 <p className="font-bold text-lg md:text-xl leading-tight tracking-tight">Visually compelling, strategically effective, and aligned with long-term goals.</p>
               </section>
