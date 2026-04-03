@@ -115,21 +115,21 @@ export default function Testimonials() {
               repeatType: "loop"
             }}
           >
-            {/* Double the array to create the infinite seamless effect */}
             {[...Array(22)].map((_, i) => {
               const logoNum = (i % 11) + 1;
-              const isLogo17 = logoNum === 17;
+              const isLargeLogo = logoNum === 17 || logoNum === 8;
               return (
                 <div 
                   key={`r1-${i}`} 
-                  className={`${isLogo17 ? 'w-72 h-40' : 'w-52 h-28'} relative flex-shrink-0 transition-transform duration-500 hover:scale-110`}
+                  className={`${isLargeLogo ? 'w-72 h-40' : 'w-52 h-28'} relative flex-shrink-0 transition-transform duration-500 hover:scale-110`}
                 >
                   <Image
                     src={`/logo${logoNum}.png`}
                     alt="Partner Logo"
                     fill
-                    sizes={isLogo17 ? "(max-width: 768px) 288px, 288px" : "(max-width: 768px) 208px, 208px"}
+                    sizes={isLargeLogo ? "288px" : "208px"}
                     className="object-contain"
+                    priority={logoNum <= 5}
                   />
                 </div>
               );
@@ -151,17 +151,17 @@ export default function Testimonials() {
           >
             {[...Array(22)].map((_, i) => {
               const logoNum = (i % 11) + 12;
-              const isLogo17 = logoNum === 17;
+              const isLargeLogo = logoNum === 17;
               return (
                 <div 
                   key={`r2-${i}`} 
-                  className={`${isLogo17 ? 'w-72 h-40' : 'w-52 h-28'} relative flex-shrink-0 transition-transform duration-500 hover:scale-110`}
+                  className={`${isLargeLogo ? 'w-72 h-40' : 'w-52 h-28'} relative flex-shrink-0 transition-transform duration-500 hover:scale-110`}
                 >
                   <Image
                     src={`/logo${logoNum}.png`}
                     alt="Partner Logo"
                     fill
-                    sizes={isLogo17 ? "(max-width: 768px) 288px, 288px" : "(max-width: 768px) 208px, 208px"}
+                    sizes={isLargeLogo ? "288px" : "208px"}
                     className="object-contain"
                   />
                 </div>

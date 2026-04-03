@@ -159,10 +159,10 @@ export default function Footer() {
               <a href="https://www.instagram.com/nexastudioofficials/" target="_blank" rel="noopener noreferrer" aria-label="Follow Nexa Studio on Instagram" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500">
                 <Camera className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="Share Nexa Studio" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500">
+              <a href="https://www.facebook.com/share/17dEuyeb1m/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Follow Nexa Studio on Facebook" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500">
                 <Share2 className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="Visit Website" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500">
+              <a href="https://www.linkedin.com/company/official-nexa" target="_blank" rel="noopener noreferrer" aria-label="Follow Nexa Studio on LinkedIn" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500">
                 <Globe className="w-4 h-4" />
               </a>
               <a href="mailto:agency.nexa.01@gmail.com" aria-label="Email Nexa Studio" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-500">

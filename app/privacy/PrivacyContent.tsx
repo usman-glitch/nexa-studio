@@ -198,7 +198,9 @@ export default function PrivacyContent() {
                       Questions regarding your data rights?
                     </p>
                     <a 
-                      href="mailto:agency.nexa.01@gmail.com" 
+                      href="https://wa.me/923434378026?text=Hi%20NEXA%20Team..." 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 group-hover:gap-4 transition-all font-black text-sm uppercase tracking-tighter text-black"
                     >
                       Contact Legal <ArrowRight className="w-4 h-4" />

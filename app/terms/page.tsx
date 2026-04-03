@@ -147,16 +147,50 @@ export default function TermsContent() {
                 viewport={{ once: true }}
                 className="sticky top-32 space-y-8"
               >
-                <section className="p-10 rounded-[40px] bg-[#00887a] text-black shadow-[0_30px_60px_rgba(0,136,122,0.25)] relative overflow-hidden group">
+                {/* Updated Container with shiny animated box */}
+                <motion.section 
+                  animate={{ 
+                    y: [0, -10, 0], // Floating motion
+                    boxShadow: [
+                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)", // Initial shadow
+                      "0 35px 60px -12px rgba(0, 136, 122, 0.5)",  // Intense shadow at peak
+                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)"  // Back to initial
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 6, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                  className="p-10 rounded-[40px] bg-[#00887a] text-black shadow-[0_30px_60px_rgba(0,136,122,0.25)] relative overflow-hidden group"
+                >
+                  {/* Diagonal "Shine" Animation Overlay */}
+                  <motion.div 
+                    initial={{ x: "-150%", skewX: "-30deg" }}
+                    animate={{ x: "200%" }}
+                    transition={{ 
+                      duration: 1.5, // Speed of the shine sweep
+                      repeat: Infinity, 
+                      repeatDelay: 2.5, // Pause before next shine (total cycle = 4s)
+                      ease: [0.43, 0.13, 0.23, 0.96] // "Sweep" easing
+                    }}
+                    className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent z-0 pointer-events-none"
+                    aria-hidden="true"
+                  />
+
+                  {/* Content (z-index added to stay above the shine) */}
                   <div className="relative z-10">
-                    <FileText className="w-8 h-8 mb-6 opacity-80" />
-                    <h3 className="font-black uppercase tracking-widest text-[10px] mb-4 opacity-70">Project Agreement</h3>
-                    <p className="font-bold text-2xl leading-[1.1] tracking-tight">
+                    <FileText className="w-8 h-8 mb-6 text-black opacity-80" />
+                    <h3 className="font-black uppercase tracking-widest text-[10px] mb-4 text-black/60">Project Agreement</h3>
+                    <p className="font-bold text-2xl leading-[1.1] tracking-tight text-black">
                       Agreement to these terms is required before any project commencement.
                     </p>
                   </div>
-                  <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-black/5 rounded-full blur-3xl group-hover:bg-black/10 transition-colors" />
-                </section>
+
+                  {/* Decorative element (background circle) */}
+                  <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-black/5 rounded-full blur-3xl group-hover:bg-black/10 transition-colors z-0" />
+                </motion.section>
+
                 <div className="px-6">
                   <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Last Updated</p>
                   <p className="text-sm font-bold text-white uppercase tracking-tighter">April 2026</p>
