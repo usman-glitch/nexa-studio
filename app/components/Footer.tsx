@@ -172,8 +172,8 @@ export default function Footer() {
             <address className="space-y-2 not-italic">
               <p className="text-gray-400 font-bold">agency.nexa.01@gmail.com</p>
               <nav className="pt-4 flex lg:flex-col items-start lg:items-end gap-4 lg:gap-2" aria-label="Legal Links">
-                <a href="#" className="text-[10px] font-black text-gray-600 hover:text-white uppercase tracking-widest">Privacy Policy</a>
-                <a href="#" className="text-[10px] font-black text-gray-600 hover:text-white uppercase tracking-widest">Terms & Conditions</a>
+                <a href="/privacy" className="text-[10px] font-black text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Privacy Policy</a>
+                <a href="/terms" className="text-[10px] font-black text-gray-600 hover:text-white uppercase tracking-widest transition-colors">Terms & Conditions</a>
               </nav>
             </address>
           </div>

@@ -43,7 +43,7 @@ export default function Testimonials() {
             >
               <div className="w-10 h-[1px] bg-black" aria-hidden="true" />
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black">
-          Kind Words
+                Kind Words
               </span>
             </motion.div>
 
@@ -100,29 +100,35 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* LOGO CLOUD SECTION - SMOOTH DECELERATION */}
+      {/* LOGO CLOUD SECTION - INFINITE SEAMLESS LOOP */}
       <div className="w-full mt-32 pt-12 overflow-hidden relative min-h-[14rem] flex flex-col justify-center gap-12">
         
-        {/* ROW 1: Glides and slows down infinitely */}
+        {/* ROW 1: Logos 1-11 */}
         <div className="flex w-full">
           <motion.div 
             className="flex whitespace-nowrap gap-16 items-center flex-shrink-0"
-            animate={{ x: ["0%", "-10%", "-20%", "-30%", "-40%", "-50%"] }}
+            animate={{ x: ["0%", "-50%"] }}
             transition={{ 
-              duration: 40, // Increased duration for a slower, premium feel
+              duration: 35, 
               repeat: Infinity,
-              ease: [0.45, 0, 0.55, 1], // Custom bezier for smooth glide-to-slow effect
+              ease: "linear",
               repeatType: "loop"
             }}
           >
-            {[...Array(20)].map((_, i) => {
-              const logoNum = (i % 9) + 1;
+            {/* Double the array to create the infinite seamless effect */}
+            {[...Array(22)].map((_, i) => {
+              const logoNum = (i % 11) + 1;
+              const isLogo17 = logoNum === 17;
               return (
-                <div key={`r1-${i}`} className="w-52 h-28 relative flex-shrink-0 transition-transform duration-500 hover:scale-110">
+                <div 
+                  key={`r1-${i}`} 
+                  className={`${isLogo17 ? 'w-72 h-40' : 'w-52 h-28'} relative flex-shrink-0 transition-transform duration-500 hover:scale-110`}
+                >
                   <Image
                     src={`/logo${logoNum}.png`}
                     alt="Partner Logo"
                     fill
+                    sizes={isLogo17 ? "(max-width: 768px) 288px, 288px" : "(max-width: 768px) 208px, 208px"}
                     className="object-contain"
                   />
                 </div>
@@ -131,26 +137,31 @@ export default function Testimonials() {
           </motion.div>
         </div>
 
-        {/* ROW 2: Glides and slows down infinitely (Synchronized) */}
+        {/* ROW 2: Logos 12-22 */}
         <div className="flex w-full">
           <motion.div 
             className="flex whitespace-nowrap gap-16 items-center flex-shrink-0"
-            animate={{ x: ["-50%", "-40%", "-30%", "-20%", "-10%", "0%"] }}
+            animate={{ x: ["-50%", "0%"] }}
             transition={{ 
-              duration: 40, 
+              duration: 35, 
               repeat: Infinity,
-              ease: [0.45, 0, 0.55, 1],
+              ease: "linear",
               repeatType: "loop"
             }}
           >
-            {[...Array(20)].map((_, i) => {
-              const logoNum = (i % 10) + 10;
+            {[...Array(22)].map((_, i) => {
+              const logoNum = (i % 11) + 12;
+              const isLogo17 = logoNum === 17;
               return (
-                <div key={`r2-${i}`} className="w-52 h-28 relative flex-shrink-0 transition-transform duration-500 hover:scale-110">
+                <div 
+                  key={`r2-${i}`} 
+                  className={`${isLogo17 ? 'w-72 h-40' : 'w-52 h-28'} relative flex-shrink-0 transition-transform duration-500 hover:scale-110`}
+                >
                   <Image
                     src={`/logo${logoNum}.png`}
                     alt="Partner Logo"
                     fill
+                    sizes={isLogo17 ? "(max-width: 768px) 288px, 288px" : "(max-width: 768px) 208px, 208px"}
                     className="object-contain"
                   />
                 </div>
