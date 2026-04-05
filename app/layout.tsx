@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   description: "High-end digital branding and web development solutions for the modern era.",
   openGraph: {
     images: ['/opengraph-image.png'], 
+  
+  },
+  verification: {
+    google: 'google-site-verification: googlec919fc044076ba76.html',
   },
 };
 
