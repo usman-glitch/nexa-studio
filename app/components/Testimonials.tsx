@@ -118,7 +118,7 @@ export default function Testimonials() {
             {[...Array(22)].map((_, i) => {
               const logoNum = (i % 11) + 1;
               const isLargeLogo = logoNum === 17 || logoNum === 8;
-              // Hard-coded override for logo8 to bypass caching/case issues
+              // Path update to the successfully renamed file
               const logoSrc = logoNum === 8 ? "/partner-logo-v8.png" : `/logo${logoNum}.png`;
               
               return (
