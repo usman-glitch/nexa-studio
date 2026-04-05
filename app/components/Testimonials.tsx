@@ -118,13 +118,16 @@ export default function Testimonials() {
             {[...Array(22)].map((_, i) => {
               const logoNum = (i % 11) + 1;
               const isLargeLogo = logoNum === 17 || logoNum === 8;
+              // Hard-coded override for logo8 to bypass caching/case issues
+              const logoSrc = logoNum === 8 ? "/partner-logo-v8.png" : `/logo${logoNum}.png`;
+              
               return (
                 <div 
                   key={`r1-${i}`} 
                   className={`${isLargeLogo ? 'w-72 h-40' : 'w-52 h-28'} relative flex-shrink-0 transition-transform duration-500 hover:scale-110`}
                 >
                   <Image
-                    src={`/logo${logoNum}.png`}
+                    src={logoSrc}
                     alt="Partner Logo"
                     fill
                     sizes={isLargeLogo ? "288px" : "208px"}
