@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   description: "High-end digital branding and web development solutions for the modern era.",
   openGraph: {
     images: ['/opengraph-image.png'], 
-  
   },
   verification: {
-    google: '<meta name="google-site-verification" content="IRzcAqTsQSO-uLw3DrM7IWbUsLl_j3gCxgJCVW354Ck" />', // This is the "content" value from the meta tag
+    // ONLY the string inside the quotes, NOT the full <meta> tag
+    google: 'IRzcAqTsQSO-uLw3DrM7IWbUsLl_j3gCxgJCVW354Ck', 
   },
 };
 
