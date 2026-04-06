@@ -81,123 +81,130 @@ const sections = [
 
 export default function TermsContent() {
   return (
-    /* FIXED: Removed overflow-x-hidden to prevent double scrollbar conflict */
-    <main className="relative min-h-screen w-full bg-[#050505] text-white selection:bg-[#00887a] selection:text-white">
-      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute inset-0 opacity-10 bg-[url('/carbonfiber.png')]" />
-        <motion.div 
-          animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.1, 0.05] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-20 -left-20 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-[#00887a]/20 blur-[120px] rounded-full"
-        />
-      </div>
+    <>
+      {/* FIXED: 
+        1. Removed 'min-h-screen' to allow natural page flow.
+        2. Removed 'overflow-x-hidden' to prevent double scrollbar triggers.
+      */}
+      <main className="relative w-full bg-[#050505] text-white selection:bg-[#00887a] selection:text-white">
+        <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute inset-0 opacity-10 bg-[url('/carbonfiber.png')]" />
+          <motion.div 
+            animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.1, 0.05] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-20 -left-20 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-[#00887a]/20 blur-[120px] rounded-full"
+          />
+        </div>
 
-      <div className="relative z-10 pt-32 pb-24 md:pt-56 md:pb-48 px-6 sm:px-10">
-        <article className="max-w-[1400px] mx-auto">
-          <motion.header 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            className="mb-16 md:mb-32"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-[#00887a]/10 rounded-lg">
-                <Scale className="w-5 h-5 text-[#00887a]" aria-hidden="true" />
-              </div>
-              <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-gray-500">Legal Framework</span>
-            </div>
-            
-            <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold tracking-tighter leading-[0.85] mb-8">
-              Terms of <br />
-              <span className="text-gray-400 italic font-serif font-light lowercase">Service.</span>
-            </h1>
-            
-            <p className="max-w-2xl text-lg md:text-xl text-gray-400 leading-relaxed font-medium">
-              Welcome to NEXA Studio. These Terms and Conditions govern your use of our services. By engaging with NEXA Studio, you agree to comply with and be bound by the following terms.
-            </p>
-          </motion.header>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24">
-            <motion.div 
-              variants={staggerContainer}
+        <div className="relative z-10 pt-32 pb-24 md:pt-56 md:pb-48 px-6 sm:px-10">
+          <article className="max-w-[1400px] mx-auto">
+            <motion.header 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              className="lg:col-span-8 space-y-12 md:space-y-20"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="mb-16 md:mb-32"
             >
-              {sections.map((section, i) => (
-                <motion.section key={i} variants={fadeInUp} className="group">
-                  <div className="flex items-baseline gap-4 mb-4">
-                    <span className="text-[#00887a] font-mono text-sm opacity-50">0{i + 1}</span>
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:text-[#00887a] transition-colors duration-300">
-                      {section.title}
-                    </h2>
-                  </div>
-                  <p className="text-gray-400 text-base md:text-lg leading-relaxed pl-9 border-l border-white/5 group-hover:border-[#00887a]/30 transition-colors">
-                    {section.content}
-                  </p>
-                </motion.section>
-              ))}
-            </motion.div>
-
-            <aside className="lg:col-span-4">
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="sticky top-32 space-y-8"
-              >
-                <motion.section 
-                  animate={{ 
-                    y: [0, -10, 0],
-                    boxShadow: [
-                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)",
-                      "0 35px 60px -12px rgba(0, 136, 122, 0.5)",
-                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)"
-                    ]
-                  }}
-                  transition={{ 
-                    duration: 6, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
-                  }}
-                  className="p-10 rounded-[40px] bg-[#00887a] text-black shadow-[0_30px_60px_rgba(0,136,122,0.25)] relative overflow-hidden group"
-                >
-                  <motion.div 
-                    initial={{ x: "-150%", skewX: "-30deg" }}
-                    animate={{ x: "200%" }}
-                    transition={{ 
-                      duration: 1.5,
-                      repeat: Infinity, 
-                      repeatDelay: 2.5,
-                      ease: [0.43, 0.13, 0.23, 0.96]
-                    }}
-                    className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent z-0 pointer-events-none"
-                    aria-hidden="true"
-                  />
-
-                  <div className="relative z-10">
-                    <FileText className="w-8 h-8 mb-6 text-black opacity-80" />
-                    <h3 className="font-black uppercase tracking-widest text-[10px] mb-4 text-black/60">Project Agreement</h3>
-                    <p className="font-bold text-2xl leading-[1.1] tracking-tight text-black">
-                      Agreement to these terms is required before any project commencement.
-                    </p>
-                  </div>
-
-                  <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-black/5 rounded-full blur-3xl group-hover:bg-black/10 transition-colors z-0" />
-                </motion.section>
-
-                <div className="px-6">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Last Updated</p>
-                  <p className="text-sm font-bold text-white uppercase tracking-tighter">April 2026</p>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-2 bg-[#00887a]/10 rounded-lg">
+                  <Scale className="w-5 h-5 text-[#00887a]" aria-hidden="true" />
                 </div>
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-gray-500">Legal Framework</span>
+              </div>
+              
+              <h1 className="text-6xl sm:text-7xl md:text-9xl font-bold tracking-tighter leading-[0.85] mb-8">
+                Terms of <br />
+                <span className="text-gray-400 italic font-serif font-light lowercase">Service.</span>
+              </h1>
+              
+              <p className="max-w-2xl text-lg md:text-xl text-gray-400 leading-relaxed font-medium">
+                Welcome to NEXA Studio. These Terms and Conditions govern your use of our services. By engaging with NEXA Studio, you agree to comply with and be bound by the following terms.
+              </p>
+            </motion.header>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24">
+              <motion.div 
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="lg:col-span-8 space-y-12 md:space-y-20"
+              >
+                {sections.map((section, i) => (
+                  <motion.section key={i} variants={fadeInUp} className="group">
+                    <div className="flex items-baseline gap-4 mb-4">
+                      <span className="text-[#00887a] font-mono text-sm opacity-50">0{i + 1}</span>
+                      <h2 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:text-[#00887a] transition-colors duration-300">
+                        {section.title}
+                      </h2>
+                    </div>
+                    <p className="text-gray-400 text-base md:text-lg leading-relaxed pl-9 border-l border-white/5 group-hover:border-[#00887a]/30 transition-colors">
+                      {section.content}
+                    </p>
+                  </motion.section>
+                ))}
               </motion.div>
-            </aside>
-          </div>
-        </article>
-      </div>
+
+              <aside className="lg:col-span-4">
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="sticky top-32 space-y-8"
+                >
+                  <motion.section 
+                    animate={{ 
+                      y: [0, -10, 0],
+                      boxShadow: [
+                        "0 25px 50px -12px rgba(0, 136, 122, 0.25)",
+                        "0 35px 60px -12px rgba(0, 136, 122, 0.5)",
+                        "0 25px 50px -12px rgba(0, 136, 122, 0.25)"
+                      ]
+                    }}
+                    transition={{ 
+                      duration: 6, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                    className="p-10 rounded-[40px] bg-[#00887a] text-black shadow-[0_30px_60px_rgba(0,136,122,0.25)] relative overflow-hidden group"
+                  >
+                    <motion.div 
+                      initial={{ x: "-150%", skewX: "-30deg" }}
+                      animate={{ x: "200%" }}
+                      transition={{ 
+                        duration: 1.5,
+                        repeat: Infinity, 
+                        repeatDelay: 2.5,
+                        ease: [0.43, 0.13, 0.23, 0.96]
+                      }}
+                      className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent z-0 pointer-events-none"
+                      aria-hidden="true"
+                    />
+
+                    <div className="relative z-10">
+                      <FileText className="w-8 h-8 mb-6 text-black opacity-80" />
+                      <h3 className="font-black uppercase tracking-widest text-[10px] mb-4 text-black/60">Project Agreement</h3>
+                      <p className="font-bold text-2xl leading-[1.1] tracking-tight text-black">
+                        Agreement to these terms is required before any project commencement.
+                      </p>
+                    </div>
+
+                    <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-black/5 rounded-full blur-3xl group-hover:bg-black/10 transition-colors z-0" />
+                  </motion.section>
+
+                  <div className="px-6">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-2">Last Updated</p>
+                    <p className="text-sm font-bold text-white uppercase tracking-tighter">April 2026</p>
+                  </div>
+                </motion.div>
+              </aside>
+            </div>
+          </article>
+        </div>
+      </main>
+      
+      {/* FIXED: Footer moved outside main to prevent layout height conflicts */}
       <Footer />
-    </main>
+    </>
   );
 }
