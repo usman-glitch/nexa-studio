@@ -73,17 +73,25 @@ body {
 .blur-lg { filter: blur(12px); }
 .blur-xl { filter: blur(20px); }
 .blur-2xl { filter: blur(32px); }
+
+/* FIXED: Unified scroll logic to kill double scrollers */
 html {
   scroll-behavior: smooth;
+  height: auto;
+  overflow-y: scroll; /* Ensures one consistent scrollbar gutter */
 }
-html, body {
-  /* This ensures the browser can calculate the scroll position accurately */
+
+body {
   position: relative;
-  scroll-behavior: smooth;
   /* Prevent horizontal overflow issues on mobile */
   max-width: 100vw;
   overflow-x: hidden;
+  /* FIXED: Ensure body doesn't create its own scroll context */
+  height: auto;
+  min-height: 100vh;
+  overflow-y: visible;
 }
+
 /* This ensures that when you scroll to an ID, it stops 100px before the top 
    so the Navbar doesn't cover the content */
 section[id] {

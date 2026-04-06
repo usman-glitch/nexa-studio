@@ -18,11 +18,20 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.nexastudioofficial.com"),
   title: "NEXA Studio | Digital Design Agency",
   description: "High-end digital branding and web development solutions for the modern era.",
+  // ADDED: Explicit icon mapping for Search Engines
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/logo.png' },
+    ],
+  },
   openGraph: {
     images: ['/opengraph-image.png'], 
   },
   verification: {
-    // ONLY the string inside the quotes, NOT the full <meta> tag
     google: 'IRzcAqTsQSO-uLw3DrM7IWbUsLl_j3gCxgJCVW354Ck', 
   },
 };
@@ -35,10 +44,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen flex flex-col bg-[#050505]">
         <Navbar />
         {children}
         <SpeedInsights />

@@ -81,7 +81,8 @@ const sections = [
 
 export default function TermsContent() {
   return (
-    <main className="relative min-h-screen w-full bg-[#050505] overflow-x-hidden text-white selection:bg-[#00887a] selection:text-white">
+    /* FIXED: Removed overflow-x-hidden to prevent double scrollbar conflict */
+    <main className="relative min-h-screen w-full bg-[#050505] text-white selection:bg-[#00887a] selection:text-white">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0 opacity-10 bg-[url('/carbonfiber.png')]" />
         <motion.div 
@@ -147,14 +148,13 @@ export default function TermsContent() {
                 viewport={{ once: true }}
                 className="sticky top-32 space-y-8"
               >
-                {/* Updated Container with shiny animated box */}
                 <motion.section 
                   animate={{ 
-                    y: [0, -10, 0], // Floating motion
+                    y: [0, -10, 0],
                     boxShadow: [
-                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)", // Initial shadow
-                      "0 35px 60px -12px rgba(0, 136, 122, 0.5)",  // Intense shadow at peak
-                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)"  // Back to initial
+                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)",
+                      "0 35px 60px -12px rgba(0, 136, 122, 0.5)",
+                      "0 25px 50px -12px rgba(0, 136, 122, 0.25)"
                     ]
                   }}
                   transition={{ 
@@ -164,21 +164,19 @@ export default function TermsContent() {
                   }}
                   className="p-10 rounded-[40px] bg-[#00887a] text-black shadow-[0_30px_60px_rgba(0,136,122,0.25)] relative overflow-hidden group"
                 >
-                  {/* Diagonal "Shine" Animation Overlay */}
                   <motion.div 
                     initial={{ x: "-150%", skewX: "-30deg" }}
                     animate={{ x: "200%" }}
                     transition={{ 
-                      duration: 1.5, // Speed of the shine sweep
+                      duration: 1.5,
                       repeat: Infinity, 
-                      repeatDelay: 2.5, // Pause before next shine (total cycle = 4s)
-                      ease: [0.43, 0.13, 0.23, 0.96] // "Sweep" easing
+                      repeatDelay: 2.5,
+                      ease: [0.43, 0.13, 0.23, 0.96]
                     }}
                     className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent z-0 pointer-events-none"
                     aria-hidden="true"
                   />
 
-                  {/* Content (z-index added to stay above the shine) */}
                   <div className="relative z-10">
                     <FileText className="w-8 h-8 mb-6 text-black opacity-80" />
                     <h3 className="font-black uppercase tracking-widest text-[10px] mb-4 text-black/60">Project Agreement</h3>
@@ -187,7 +185,6 @@ export default function TermsContent() {
                     </p>
                   </div>
 
-                  {/* Decorative element (background circle) */}
                   <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-black/5 rounded-full blur-3xl group-hover:bg-black/10 transition-colors z-0" />
                 </motion.section>
 
