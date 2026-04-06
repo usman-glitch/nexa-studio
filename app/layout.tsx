@@ -39,7 +39,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       data-scroll-behavior="smooth"
     >
-      /* FIXED: Changed min-h-full to min-h-screen to allow natural page flow */
       <body className="min-h-screen flex flex-col bg-[#050505]">
         <Navbar />
         {children}
