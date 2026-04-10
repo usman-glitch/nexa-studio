@@ -1,0 +1,25 @@
+[33md42736a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m modified files for fixing double scroller
+[33m5edf116[m created sitemap and robots files
+[33mae85378[m fix: changes in layout.tsx
+[33m74ac6c0[m fix: favicon replaced in layout.tsx
+[33m60089a1[m fix: resolve double scroller, sync logo8 path, and update favicon metadata
+[33me0fa031[m fix: update testimonial image path to partner-logo-v8.png
+[33mf9d730a[m fix: sync testimonials code with partner-logo-v8.png
+[33ma40c6ee[m fix: hard rename logo8 to bypass git ignore
+[33m05299c0[m feat: removed rotating favicon loader in PageTransition
+[33m123bd81[m feat: added 3D tilt, kinetic type, and custom favicon loader
+[33mc091b64[m seo: added google search console verification metadata
+[33m337a049[m seo: added google search console verification metadata
+[33m0c9c394[m seo: added google search console verification metadata
+[33m431e2ab[m build: final production build sync and asset verification
+[33mc392345[m fix: logo8 visibility, update privacy whatsapp link, and add footer socials
+[33m394e7ad[m feat: update privacy & terms, sync new brand logos, and polish footer/testimonials
+[33m836d9af[m feat: resolve privacy policy casing and update sidebar ui with brand colors
+[33mb557aaa[m design: sync brand colors on about page and update contact typography
+[33mdf72390[m feat: enhance testimonial animation and contact section typography
+[33m64173f6[m feat: initial high-end navbar and hero components for NEXA
+[33m594897a[m Fix navbar scroll behavior + add client logos
+[33m8735161[m SEO: Optimized title tag for NEXA Studio
+[33m772207e[m Update: New NEXA Studio OpenGraph image
+[33mf44a283[m added vercel speed insights
+[33m35d2c6c[m Initial commit: NEXA Studio contact and success flow

@@ -42,6 +42,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#050505]">
         <Navbar />
         {children}
+       
         <SpeedInsights />
       </body>
     </html>

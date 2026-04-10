@@ -4,7 +4,7 @@ import About from "./components/About";
 import CTA from "./components/CTA";
 import Services from "./components/Services";
 import Process from "./components/Process";
-import Testimonials from "./components/Testimonials"; // 1. Add this import
+import Testimonials from "./components/Testimonials";
 import ContactSection from "./components/Contactsecton";
 import Footer from "./components/Footer";
 import Backtotop from "./components/Backtotop";

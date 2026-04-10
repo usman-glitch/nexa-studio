@@ -32,13 +32,13 @@ const services = [
     icon: Cloud,
   },
   {
-    title: "Social Growth",
-    desc: "Marketing strategies that drive deep engagement and brand loyalty.",
+    title: "AI Solutions",
+    desc: "Cutting-edge artificial intelligence solutions to automate and optimize your business processes.",
     icon: Shield,
   },
   {
-    title: "Full Management",
-    desc: "Complete social media management to take the weight off your team.",
+    title: "AI Agent Integration",
+    desc: "Seamless integration of AI agents to enhance your team's productivity and efficiency.",
     icon: Sparkles,
   },
 ];
