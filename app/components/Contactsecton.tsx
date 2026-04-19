@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 
 /* ─────────────────────────────────────────────
-   Inline SVG icon helpers
+    Inline SVG icon helpers
 ───────────────────────────────────────────── */
 const IconMail = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -29,11 +29,6 @@ const IconMapPin = () => (
     <circle cx="12" cy="10" r="3" />
   </svg>
 );
-const IconCheck = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20 6 9 17l-5-5" />
-  </svg>
-);
 const IconArrow = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -47,7 +42,7 @@ const IconCheckCircle = () => (
 );
 
 /* ─────────────────────────────────────────────
-   Poppins font loader
+    Poppins font loader
 ───────────────────────────────────────────── */
 const PoppinsLoader = () => {
   useEffect(() => {
@@ -62,7 +57,7 @@ const PoppinsLoader = () => {
 };
 
 /* ─────────────────────────────────────────────
-   Contact card row
+    Contact card row
 ───────────────────────────────────────────── */
 interface ContactRowProps {
   icon: React.ReactNode;
@@ -86,14 +81,6 @@ const ContactRow = ({ icon, label, value, sub, onClick, href }: ContactRowProps)
           textDecoration: "none", cursor: "pointer", textAlign: "left", transition: "all 0.25s", fontFamily: "'Poppins', sans-serif",
           position: "relative", overflow: "hidden",
         }}
-        onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
-          (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.07)";
-          (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.18)";
-        }}
-        onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
-          (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.03)";
-          (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)";
-        }}
       >
         <div style={{
           width: 46, height: 46, borderRadius: 14, flexShrink: 0, display: "flex", alignItems: "center",
@@ -111,9 +98,6 @@ const ContactRow = ({ icon, label, value, sub, onClick, href }: ContactRowProps)
   );
 };
 
-/* ─────────────────────────────────────────────
-   Main Component
-───────────────────────────────────────────── */
 export default function ContactSection() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [copied, setCopied] = useState(false);
@@ -134,7 +118,6 @@ export default function ContactSection() {
   };
   const onMouseLeave = () => { mx.set(0); my.set(0); };
 
-  // UPDATED EMAIL
   const EMAIL = "contact@nexastudioofficial.com";
 
   const copyEmail = async () => {
@@ -148,21 +131,36 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("submitting");
-    const formData = new FormData(e.currentTarget);
+    
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    const data = Object.fromEntries(formData.entries());
+
     try {
-      const res = await fetch("https://formspree.io/f/mlgoqkew", {
+      // 1. Primary: Send to Resend via Internal API
+      const resendRes = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      // 2. Secondary: Backup to Formspree
+      fetch("https://formspree.io/f/mlgoqkew", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },
       });
-      if (res.ok) {
+
+      if (resendRes.ok) {
         setStatus("success");
-        (e.target as HTMLFormElement).reset();
+        formElement.reset();
       } else {
-        setStatus("error");
-        setTimeout(() => setStatus("idle"), 3000);
+        const errLog = await resendRes.text();
+        console.error("Backend Error:", errLog);
+        throw new Error("Failed to send email");
       }
-    } catch {
+    } catch (err) {
+      console.error("Submission error:", err);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 3000);
     }
