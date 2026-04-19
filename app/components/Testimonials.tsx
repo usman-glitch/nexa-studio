@@ -7,22 +7,22 @@ import Image from "next/image";
 const testimonials = [
   {
     content: "Working with NEXA felt easy. They understood what we wanted, even when we couldn't fully explain it ourselves.",
-    author: "Client Partner",
+    author: "Tecknovation manager",
     size: "large",
   },
   {
     content: "Our brand finally feels like it has an identity. The difference before and after is clear.",
-    author: "Founder & CEO",
+    author: "Farmsman CEO",
     size: "medium",
   },
   {
     content: "They pay attention to details most people ignore — and that's what makes their work stand out.",
-    author: "Creative Lead",
+    author: "Qaim",
     size: "medium",
   },
   {
     content: "You can tell they actually care about the outcome, not just the delivery.",
-    author: "Project Manager",
+    author: "Spodgy CEO",
     size: "large",
   },
 ];
