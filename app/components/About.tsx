@@ -44,8 +44,8 @@ export default function About() {
             <h3 className="sr-only">Our Core Services</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-8 gap-x-4">
               {[
-                "Full-Stack", "Marketing", "UI/UX Design", 
-                "Content", "Consulting", "Strategy"
+                "Full-Stack", "Marketing", "Graphic Design", 
+                "AI Integration", "Automation", "AI Agents"
               ].map((item, idx) => (
                 <div key={idx} className="group">
                   <p className="text-xs font-bold text-gray-400 group-hover:text-black transition-colors duration-300 tracking-widest uppercase">
@@ -91,15 +91,15 @@ export default function About() {
           {/* STATS - Semantic data points */}
           <div className="grid grid-cols-3 gap-6 mt-6" role="list" aria-label="Nexa Studio Achievement Statistics">
             <div className="text-left border-l-2 border-gray-100 pl-6" role="listitem">
-              <h3 className="text-4xl font-black text-gray-900">150+</h3>
+              <h3 className="text-4xl font-black text-gray-900">90+</h3>
               <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Projects</p>
             </div>
             <div className="text-left border-l-2 border-gray-100 pl-6" role="listitem">
-              <h3 className="text-4xl font-black text-gray-900">50+</h3>
+              <h3 className="text-4xl font-black text-gray-900">30+</h3>
               <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Clients</p>
             </div>
             <div className="text-left border-l-2 border-gray-100 pl-6" role="listitem">
-              <h3 className="text-4xl font-black text-gray-900">99%</h3>
+              <h3 className="text-4xl font-black text-gray-900">97%</h3>
               <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Success</p>
             </div>
           </div>
